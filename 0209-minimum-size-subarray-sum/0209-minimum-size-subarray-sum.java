@@ -7,7 +7,7 @@ class Solution {
         int sum=0;
         int res=Integer.MAX_VALUE;
 
-        while(i<=j){
+        while(i<=j ){
             if(sum<target){
                 if(j>=len) break;
                 sum=sum+nums[j];
@@ -17,6 +17,8 @@ class Solution {
                 sum=sum-nums[i];
                 i++;
             } 
+
+            System.out.println("i->"+i+"  j->"+ j +"  sum-->"+sum);
         }
         return res==Integer.MAX_VALUE?0:res; 
     }
