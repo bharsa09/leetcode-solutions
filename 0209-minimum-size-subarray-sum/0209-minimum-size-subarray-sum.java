@@ -7,20 +7,17 @@ class Solution {
         int sum=0;
         int res=Integer.MAX_VALUE;
 
-        while(j<len){
-
-            sum=sum+nums[j];
-
-            while(sum>=target){
-
-                res=Math.min(j-i+1,res);
+        while(i<=j){
+            if(sum<target){
+                if(j>=len) break;
+                sum=sum+nums[j];
+                j++;
+            }else{
+                res=Math.min(res,j-i);
                 sum=sum-nums[i];
                 i++;
-            }
-
-            j++;
+            } 
         }
-        return res==Integer.MAX_VALUE?0:res;
-        
+        return res==Integer.MAX_VALUE?0:res; 
     }
 }
